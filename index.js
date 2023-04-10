@@ -1,7 +1,8 @@
 const express = require('express')
+const crypto = require('crypto')
 const app = express()
 app.all('/', (req, res) => {
-  const rand = Math.random();
+  const rand = crypto.randomUUID()
   console.log("Just got a request!", rand, req)
   console.error("console.error", rand)
   res.send(`Yo!, ${rand}`)
